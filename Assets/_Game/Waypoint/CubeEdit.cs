@@ -15,8 +15,11 @@ public class CubeEdit : MonoBehaviour
     private void Update()
     {
         SnapToGrid();
-        SetTopLabel();
-        SetName();
+        if (_waypoint.isInteractive)
+        {
+            SetTopLabel();
+            SetName();
+        }
     }
 
     private void SnapToGrid()

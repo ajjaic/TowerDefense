@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
+    public bool isInteractive = true;
     private const int Gridsize = 10;
 
     // API

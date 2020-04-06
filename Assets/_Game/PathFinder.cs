@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PathFinder : MonoBehaviour
@@ -14,10 +15,6 @@ public class PathFinder : MonoBehaviour
     {
         LoadWayPoints();
         SetStartEndColors();
-        // foreach (var waypoint in GetPathFromStartToEnd())
-        // {
-        //     print(waypoint); 
-        // }
 
         Vector3 enemyPos = new Vector3(startWayPoint.GetWorldPos().x, 0f, startWayPoint.GetWorldPos().y);
         EnemyMovement e = Instantiate(enemyMovement, enemyPos, Quaternion.identity);
@@ -92,7 +89,8 @@ public class PathFinder : MonoBehaviour
 
     private void LoadWayPoints()
     {
-        foreach (var waypoint in transform.GetComponentsInChildren<Waypoint>())
+        var interactiveWayPoints = transform.GetComponentsInChildren<Waypoint>();
+        foreach (var waypoint in interactiveWayPoints)
         {
             var gridPos = waypoint.GetGridPos();
             if (_waypointGrid.ContainsKey(gridPos))

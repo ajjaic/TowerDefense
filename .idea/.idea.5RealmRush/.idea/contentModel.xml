@@ -13,7 +13,6 @@
             <e p="DamageHandler.cs" t="Include" />
             <e p="Movement.cs" t="Include" />
           </e>
-          <e p="PathFinder.cs" t="Include" />
           <e p="Tower" t="Include">
             <e p="Tower.cs" t="Include" />
           </e>
@@ -21,6 +20,7 @@
             <e p="CubeEdit.cs" t="Include" />
             <e p="Waypoint.cs" t="Include" />
           </e>
+          <e p="WayPointGridMap.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PathFinder : MonoBehaviour
+public class WayPointGridMap: MonoBehaviour
 {
     [SerializeField] private Movement enemyMovement;
+    [SerializeField] private Transform enemyParent;
     [SerializeField] private Waypoint startWayPoint;
     [SerializeField] private Waypoint endWayPoint;
     private Dictionary<Vector2Int, Waypoint> _waypointGrid = new Dictionary<Vector2Int, Waypoint>();
@@ -15,13 +17,24 @@ public class PathFinder : MonoBehaviour
     {
         LoadWayPoints();
         SetStartEndColors();
-        
-        Vector3 enemyPos = new Vector3(startWayPoint.GetWorldPos().x, 0f, startWayPoint.GetWorldPos().y);
-        Movement e = Instantiate(enemyMovement, enemyPos, Quaternion.identity);
-        e.Walk(GetPathFromStartToEnd());
+        StartCoroutine(CreateEnemy());
     }
 
     // methods
+    // TODO: why is the pathfinder creating enemies?
+    private IEnumerator CreateEnemy()
+    {
+        while (true)
+        {
+            if (enemyParent.childCount < 1)
+            {
+                Movement e = Instantiate(enemyMovement, enemyParent);
+                e.Walk(GetPathFromStartToEnd());
+            }
+            yield return new WaitForSeconds(3);
+        }
+    }
+    
     private List<Waypoint> GetPathFromStartToEnd()
     {
         if (startWayPoint == endWayPoint)

@@ -11,7 +11,6 @@ public class DamageHandler : MonoBehaviour
     // Messages
     private void OnParticleCollision(GameObject other)
     {
-        print("hit");
         _currentHits += 1;
         if (_currentHits >= maxHits)
         {

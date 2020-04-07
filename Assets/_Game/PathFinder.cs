@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PathFinder : MonoBehaviour
 {
-    [SerializeField] private EnemyMovement enemyMovement;
+    [SerializeField] private Movement enemyMovement;
     [SerializeField] private Waypoint startWayPoint;
     [SerializeField] private Waypoint endWayPoint;
     private Dictionary<Vector2Int, Waypoint> _waypointGrid = new Dictionary<Vector2Int, Waypoint>();
@@ -15,9 +15,9 @@ public class PathFinder : MonoBehaviour
     {
         LoadWayPoints();
         SetStartEndColors();
-
+        
         Vector3 enemyPos = new Vector3(startWayPoint.GetWorldPos().x, 0f, startWayPoint.GetWorldPos().y);
-        EnemyMovement e = Instantiate(enemyMovement, enemyPos, Quaternion.identity);
+        Movement e = Instantiate(enemyMovement, enemyPos, Quaternion.identity);
         e.Walk(GetPathFromStartToEnd());
     }
 

@@ -7,7 +7,7 @@ public class Tower : MonoBehaviour
 
     private void Start()
     {
-        objectToAimAt = FindObjectOfType<EnemyMovement>().transform;
+        objectToAimAt = FindObjectOfType<Movement>().transform;
     }
 
     private void Update()

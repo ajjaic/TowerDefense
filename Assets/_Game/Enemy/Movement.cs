@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     // API
     public void Walk(List<Waypoint> path)

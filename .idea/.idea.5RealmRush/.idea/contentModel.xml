@@ -10,7 +10,8 @@
       <e p="Assets" t="Include">
         <e p="_Game" t="Include">
           <e p="Enemy" t="Include">
-            <e p="EnemyMovement.cs" t="Include" />
+            <e p="DamageHandler.cs" t="Include" />
+            <e p="Movement.cs" t="Include" />
           </e>
           <e p="PathFinder.cs" t="Include" />
           <e p="Tower" t="Include">

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class MovementHandler : MonoBehaviour
 {
     // API
     public void Walk(List<Waypoint> path)
@@ -13,11 +13,7 @@ public class Movement : MonoBehaviour
         {
             foreach (var waypoint in path)
             {
-                transform.position = new Vector3(
-                    waypoint.GetWorldPos().x,
-                    transform.position.y,
-                    waypoint.GetWorldPos().y
-                );
+                transform.position = new Vector3(waypoint.GetWorldPos().x, transform.position.y, waypoint.GetWorldPos().y);
                 yield return new WaitForSeconds(1);
             }
         }

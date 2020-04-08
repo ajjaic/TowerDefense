@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DamageHandler : MonoBehaviour
 {
-    [SerializeField] private int maxHits = 12;
     private int _currentHits;
-    
+    [SerializeField] private int maxHits = 12;
+
     // Messages
     private void OnParticleCollision(GameObject other)
     {

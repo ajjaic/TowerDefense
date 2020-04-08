@@ -1,10 +1,9 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
-    public bool isInteractive = true;
     private const int Gridsize = 10;
+    public bool isInteractive = true;
 
     // API
     public Vector2Int GetWorldPos()

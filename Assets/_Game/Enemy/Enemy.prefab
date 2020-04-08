@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 250760168361581775}
+  - component: {fileID: 7476989186217045474}
+  - component: {fileID: 51294447085205328}
   - component: {fileID: 217024747146381085}
   - component: {fileID: 227149795204773061}
-  - component: {fileID: 7476989186217045474}
   - component: {fileID: 3704241726155443443}
   - component: {fileID: 2318718699496527025}
-  - component: {fileID: 51294447085205328}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -36,6 +36,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7476989186217045474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248209601829309713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35070e7df7d19304392c40d898d67bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &51294447085205328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248209601829309713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4dc74278b69b8d44a95a98b1554b11d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHits: 12
 --- !u!33 &217024747146381085
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -83,18 +108,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7476989186217045474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 248209601829309713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35070e7df7d19304392c40d898d67bfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &3704241726155443443
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -124,16 +137,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &51294447085205328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 248209601829309713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4dc74278b69b8d44a95a98b1554b11d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHits: 12

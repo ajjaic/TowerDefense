@@ -1,14 +1,12 @@
-﻿using System;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    [SerializeField] private Transform objectToAimWith;
-    [SerializeField] private ParticleSystem gunToShootWith;
-    [SerializeField] [Range(1f, 100f)] private float detectionRange;
-    private Transform _enemyParent;
     private ParticleSystem.EmissionModule _bulletEmitter;
+    private Transform _enemyParent;
+    [SerializeField] [Range(1f, 100f)] private float detectionRange;
+    [SerializeField] private ParticleSystem gunToShootWith;
+    [SerializeField] private Transform objectToAimWith;
 
     private void Start()
     {
@@ -21,12 +19,12 @@ public class Tower : MonoBehaviour
     {
         foreach (Transform child in _enemyParent.transform)
         {
-            float distanceToEnemy = Vector3.Distance(child.position, transform.position);
+            var distanceToEnemy = Vector3.Distance(child.position, transform.position);
             if (distanceToEnemy < detectionRange)
             {
                 Shoot(child);
                 return;
-            } 
+            }
         }
 
         _bulletEmitter.enabled = false;

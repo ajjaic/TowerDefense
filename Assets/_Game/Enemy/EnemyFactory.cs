@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyFactory : MonoBehaviour
 {
-    [SerializeField] private float enemyCreationInterval;
     [SerializeField] private MovementHandler enemy;
+    [SerializeField] private float enemyCreationInterval;
     [SerializeField] private GridMapLoadedEvent gridMapLoadedEvent;
 
     // messages

@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 1108219647416876166, guid: 5817e18d26cf4b24f91f6b3abd1b3279, type: 3}
+  isCreateTowerEvent: {fileID: 11400000, guid: 58234fbed48553a439695cfc9964dbcc, type: 2}
   isInteractive: 1
 --- !u!114 &5725197811718146086
 MonoBehaviour:

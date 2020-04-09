@@ -3,9 +3,9 @@
 public class DamageHandler : MonoBehaviour
 {
     private int _currentHits;
-    [SerializeField] private int maxHits = 12;
-    [SerializeField] private ParticleSystem hitVFX;
     [SerializeField] private ParticleSystem deathVFX;
+    [SerializeField] private ParticleSystem hitVFX;
+    [SerializeField] private int maxHits = 12;
 
     // Messages
     private void OnParticleCollision(GameObject other)
@@ -13,7 +13,7 @@ public class DamageHandler : MonoBehaviour
         _currentHits += 1;
         var hitVFXInstance = Instantiate(hitVFX, transform);
         Destroy(hitVFXInstance.gameObject, 1f);
-        
+
         if (_currentHits >= maxHits)
         {
             enabled = false;

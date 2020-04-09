@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MovementHandler : MonoBehaviour
 {
-    [SerializeField] [Range(1f, 10f)] private float yOffset = 4;
+    [SerializeField] private Vector3 yOffset = new Vector3(0f, 4f, 0f);
+
     // API
     public void Walk(List<Waypoint> path)
     {
@@ -12,10 +13,9 @@ public class MovementHandler : MonoBehaviour
 
         IEnumerator Helper()
         {
-            float yPos = transform.position.y + yOffset;
             foreach (var waypoint in path)
             {
-                transform.position = new Vector3(waypoint.GetWorldPos().x, yPos, waypoint.GetWorldPos().y);
+                transform.position = waypoint.GetWorldPos() + yOffset;
                 yield return new WaitForSeconds(1);
             }
         }

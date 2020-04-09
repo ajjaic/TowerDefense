@@ -12,6 +12,7 @@
           <e p="_Common" t="Include">
             <e p="ScriptableObjects" t="Include">
               <e p="GridMapLoadedEvent.cs" t="Include" />
+              <e p="IsCreateTowerEvent.cs" t="Include" />
             </e>
           </e>
           <e p="Enemy" t="Include">
@@ -21,6 +22,7 @@
           </e>
           <e p="Tower" t="Include">
             <e p="Tower.cs" t="Include" />
+            <e p="TowerFactory.cs" t="Include" />
           </e>
           <e p="Waypoint" t="Include">
             <e p="CubeEdit.cs" t="Include" />
@@ -29,7 +31,6 @@
           <e p="WayPointGridMap.cs" t="Include" />
           <e p="WayPointPathFinder.cs" t="Include" />
         </e>
-        <e p="OnMouseOverPrinter.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />

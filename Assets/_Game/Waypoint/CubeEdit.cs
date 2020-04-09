@@ -24,7 +24,7 @@ public class CubeEdit : MonoBehaviour
 
     private void SnapToGrid()
     {
-        transform.position = new Vector3(_waypoint.GetWorldPos().x, 0f, _waypoint.GetWorldPos().y);
+        transform.position = _waypoint.GetWorldPos();
     }
 
     private void SetTopLabel()

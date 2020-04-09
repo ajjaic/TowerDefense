@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyFactory : MonoBehaviour
 {
+    [SerializeField] private float enemyCreationInterval;
     [SerializeField] private MovementHandler enemy;
     [SerializeField] private GridMapLoadedEvent gridMapLoadedEvent;
 
@@ -33,7 +34,7 @@ public class EnemyFactory : MonoBehaviour
         {
             var e = Instantiate(enemy, transform);
             e.Walk(path);
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(enemyCreationInterval);
         }
     }
 }

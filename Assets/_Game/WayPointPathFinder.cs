@@ -3,11 +3,9 @@ using UnityEngine;
 
 public class WayPointPathFinder
 {
-    private static readonly Vector2Int[] NeighborDirections =
-        {Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left};
+    private static readonly Vector2Int[] NeighborDirections = {Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left};
 
-    public static List<Waypoint> GetPathFromStartToEnd(Dictionary<Vector2Int, Waypoint> gridMap, Waypoint startWayPoint,
-        Waypoint endWayPoint)
+    public static List<Waypoint> GetPathFromStartToEnd(Dictionary<Vector2Int, Waypoint> gridMap, Waypoint startWayPoint, Waypoint endWayPoint)
     {
         if (startWayPoint == endWayPoint)
             return new List<Waypoint> {startWayPoint};
@@ -34,13 +32,13 @@ public class WayPointPathFinder
         return AssemblePath(toFrom, startWayPoint, endWayPoint);
     }
 
-    private static List<Waypoint> AssemblePath(Dictionary<Waypoint, Waypoint> toFrom, Waypoint startPoint, Waypoint
-        endPoint)
+    private static List<Waypoint> AssemblePath(Dictionary<Waypoint, Waypoint> toFrom, Waypoint startPoint, Waypoint endPoint)
     {
         var path = new List<Waypoint>();
 
         while (endPoint != null)
         {
+            endPoint.SetIsPlaceable(false);
             path.Add(endPoint);
             endPoint = toFrom[endPoint];
         }

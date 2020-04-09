@@ -90,8 +90,9 @@ GameObject:
   - component: {fileID: 4206442584403677466}
   - component: {fileID: 8276042917834023800}
   - component: {fileID: 5725197811718146086}
+  - component: {fileID: 5473310467712503637}
   m_Layer: 0
-  m_Name: FriendlyBlock
+  m_Name: Waypoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,6 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14af1a0574c1e8841bd383cfad684196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 1108219647416876166, guid: 5817e18d26cf4b24f91f6b3abd1b3279, type: 3}
+  isInteractive: 1
 --- !u!114 &5725197811718146086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +140,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc90e61cc904ff4da0ce03aa9e4f755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &5473310467712503637
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5308059064413983157}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &6283679068332957577
 GameObject:
   m_ObjectHideFlags: 0

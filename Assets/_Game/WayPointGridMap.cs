@@ -3,17 +3,18 @@ using UnityEngine;
 
 public class WayPointGridMap : MonoBehaviour
 {
-    private readonly Dictionary<Vector2Int, Waypoint> _waypointGrid = new Dictionary<Vector2Int, Waypoint>();
-    [SerializeField] private Waypoint endWayPoint;
     [SerializeField] private GridMapLoadedEvent gridMapLoadedEvent;
     [SerializeField] private Waypoint startWayPoint;
+    [SerializeField] private Waypoint endWayPoint;
+    
+    private readonly Dictionary<Vector2Int, Waypoint> _waypointGrid = new Dictionary<Vector2Int, Waypoint>();
 
     // messages
     private void Start()
     {
         LoadWayPoints();
         SetStartEndColors();
-        gridMapLoadedEvent.RaiseEvent(_waypointGrid, startWayPoint, endWayPoint);
+        gridMapLoadedEvent.RaiseEvent(_waypointGrid, startWayPoint, endWayPoint); 
     }
 
     // methods
@@ -23,6 +24,9 @@ public class WayPointGridMap : MonoBehaviour
         endWayPoint.SetColor(Color.red);
     }
 
+    /*
+     * Finds all the waypoints that are a part of the grid and stores in dictionary
+     */
     private void LoadWayPoints()
     {
         var interactiveWayPoints = transform.GetComponentsInChildren<Waypoint>();

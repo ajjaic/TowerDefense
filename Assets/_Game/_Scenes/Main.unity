@@ -349,8 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55354a25faac7074fb81a22d27457afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCreationInterval: 2
   enemy: {fileID: 7476989186217045474, guid: 8b62b26f80c38e14b8566dbc90ba1995, type: 3}
+  enemyCreationInterval: 2
   gridMapLoadedEvent: {fileID: 11400000, guid: 99db5b67883eca64d9a31fe3c08565a6, type: 2}
 --- !u!1001 &410443274
 PrefabInstance:
@@ -1077,12 +1077,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4947254974882948, guid: 9883465dcd65b2c43b90edfa17ecec39, type: 3}
       propertyPath: m_Text
-      value: 5, -2
+      value: 3, -2
       objectReference: {fileID: 0}
     - target: {fileID: 4206442584403677466, guid: 9883465dcd65b2c43b90edfa17ecec39,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4206442584403677466, guid: 9883465dcd65b2c43b90edfa17ecec39,
         type: 3}
@@ -1137,7 +1137,7 @@ PrefabInstance:
     - target: {fileID: 5308059064413983157, guid: 9883465dcd65b2c43b90edfa17ecec39,
         type: 3}
       propertyPath: m_Name
-      value: 5, -2
+      value: 3, -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9883465dcd65b2c43b90edfa17ecec39, type: 3}
@@ -1522,53 +1522,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1071894396}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1179718164
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1179718166}
-  - component: {fileID: 1179718165}
-  m_Layer: 0
-  m_Name: Towers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1179718165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1179718164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dac323a68b281b4fb15daf7ae11dd1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxTowers: 3
-  tower: {fileID: 1108219647416876166, guid: 5817e18d26cf4b24f91f6b3abd1b3279, type: 3}
-  createTowerTriggerEvent: {fileID: 11400000, guid: 9c050450c65e87649a0c8e7d7fe2ca13,
-    type: 2}
---- !u!4 &1179718166
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1179718164}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1265751354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1901,6 +1854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1585165587}
   - component: {fileID: 1585165588}
+  - component: {fileID: 1585165589}
   m_Layer: 0
   m_Name: WayPointGridMap
   m_TagString: Untagged
@@ -1952,9 +1906,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a5a8b3e52357d4fb5d00f95991db54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endWayPoint: {fileID: 197330186}
   gridMapLoadedEvent: {fileID: 11400000, guid: 99db5b67883eca64d9a31fe3c08565a6, type: 2}
   startWayPoint: {fileID: 8268230835574955221}
-  endWayPoint: {fileID: 197330186}
+--- !u!114 &1585165589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585165586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dac323a68b281b4fb15daf7ae11dd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCreateTowerEvent: {fileID: 11400000, guid: 58234fbed48553a439695cfc9964dbcc, type: 2}
+  maxTowersOnAllWaypoints: 3
 --- !u!1001 &1773661263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2195,10 +2163,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1585165587}
     m_Modifications:
+    - target: {fileID: 4947254974882948, guid: 9883465dcd65b2c43b90edfa17ecec39, type: 3}
+      propertyPath: m_Text
+      value: 1, -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4206442584403677466, guid: 9883465dcd65b2c43b90edfa17ecec39,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4206442584403677466, guid: 9883465dcd65b2c43b90edfa17ecec39,
         type: 3}
@@ -2208,7 +2180,7 @@ PrefabInstance:
     - target: {fileID: 4206442584403677466, guid: 9883465dcd65b2c43b90edfa17ecec39,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4206442584403677466, guid: 9883465dcd65b2c43b90edfa17ecec39,
         type: 3}
@@ -2253,7 +2225,7 @@ PrefabInstance:
     - target: {fileID: 5308059064413983157, guid: 9883465dcd65b2c43b90edfa17ecec39,
         type: 3}
       propertyPath: m_Name
-      value: 0, 0
+      value: 1, -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9883465dcd65b2c43b90edfa17ecec39, type: 3}

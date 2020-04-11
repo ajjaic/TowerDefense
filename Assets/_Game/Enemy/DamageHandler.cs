@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class DamageHandler : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class DamageHandler : MonoBehaviour
     [SerializeField] private ParticleSystem deathVFX;
     [SerializeField] private ParticleSystem hitVFX;
     [SerializeField] private int maxHits = 12;
+    [SerializeField] private ScoreChangedEvent scoreChangedEvent;
+    [SerializeField] private int pointsOnDestroy = 10;
 
     // Messages
     private void OnParticleCollision(GameObject other)
@@ -16,6 +19,7 @@ public class DamageHandler : MonoBehaviour
 
         if (_currentHits >= maxHits)
         {
+            scoreChangedEvent.RaiseEvent(pointsOnDestroy);
             enabled = false;
             Destroy(gameObject);
             var deathVFXInstance = Instantiate(deathVFX, transform.position, transform.rotation);
